@@ -11,8 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { FormularioComponent } from './utl/formulario/formulario.component';
 import { SumaComponent } from './utl/formulario/suma/suma.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { OperasBasComponent } from './utl/formulario/operas-bas/operas-bas.component';
-import {MatInputModule} from '@angular/material/input';
+import { OperasModule } from './utl/formulario/operas/operas.module';
+import { DistanciaPuntosModule } from './distancia/distancia-puntos/distancia modulo/distancia-puntos.module';
 
 @NgModule({
   declarations: [
@@ -23,14 +23,14 @@ import {MatInputModule} from '@angular/material/input';
     IricComponent,
     MenuComponent,
     FormularioComponent,
-    SumaComponent,
-    OperasBasComponent
+    SumaComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     NoopAnimationsModule,
-    MatInputModule
+    OperasModule,
+    DistanciaPuntosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
