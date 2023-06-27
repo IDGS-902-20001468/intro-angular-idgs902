@@ -13,6 +13,8 @@ import { SumaComponent } from './utl/formulario/suma/suma.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { OperasModule } from './utl/formulario/operas/operas.module';
 import { DistanciaPuntosModule } from './distancia/distancia-puntos/distancia modulo/distancia-puntos.module';
+import { CalificacionAlumnComponent } from './utl/calificacion-alumn/calificacion-alumn.component';
+import { AlumnoFilterPipe } from './utl/alumno-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DistanciaPuntosModule } from './distancia/distancia-puntos/distancia mo
     IricComponent,
     MenuComponent,
     FormularioComponent,
-    SumaComponent
+    SumaComponent,
+    CalificacionAlumnComponent,
+    AlumnoFilterPipe
   ],
   imports: [
     BrowserModule,

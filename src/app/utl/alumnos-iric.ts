@@ -4,4 +4,5 @@ export interface IAlumnosIric {
     correo:string;
     edad:number;
     foto:string;
+    calif:number;
 }

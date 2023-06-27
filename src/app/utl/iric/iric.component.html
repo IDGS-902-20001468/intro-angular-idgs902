@@ -28,17 +28,12 @@
             <th>Nombre</th>
             <th>Edad</th>
             <th>Correo</th>
-            <th>Fotos</th>
+            <th>Calificacion {{alumnoTitle}}</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-
-          <tr *ngFor="let alumno of alumnosIric">
-            <td></td>
-            <td>{{alumno.matricula}}</td>
-            <td>{{alumno.nombre}}</td>
-            <td>{{alumno.edad}}</td>
-            <td>{{alumno.correo}}</td>
+          <tr *ngFor="let alumno of alumnosIric | alumnoFilter:listFilter">
             <td><img
               *ngIf="muestraImg"
               [src]="alumno.foto"
@@ -46,6 +41,14 @@
               [style.width.px]="imagenwidth"
               [style.margin.px]="imagenmargin">
             </td>
+            <td>{{alumno.matricula}}</td>
+            <td>{{alumno.nombre}}</td>
+            <td>{{alumno.edad}}</td>
+            <td>{{alumno.correo}}</td>
+            <td>{{alumno.calif}}</td>
+            <td><app-calificacion-alumn (calificaClick)="onCalificacionClick($event)"
+              [califica]="alumno.calif">
+            </app-calificacion-alumn></td>
           </tr>
         </tbody>
       </table>
