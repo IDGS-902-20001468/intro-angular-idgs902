@@ -1,0 +1,89 @@
+<h1>Registro de Alumnos</h1>
+<div class="row">
+  <div class="col-6">
+    <form [formGroup]="alumnosForm" (ngSubmit)="onSubmit()" >
+      <div class="mb-4">
+        <label for="matricula" class="form-label">Matricula: </label>
+        <input type="text" id="matricula"
+        class="form-control" required formControlName="matricula" name="matricula">
+      </div>
+      <div *ngIf="alumnosForm.get('matricula')?.touched &&
+      alumnosForm.get('matricula')?.errors?.['required']"
+      class="alert alert-danger">Este Campo es requerido
+      </div>
+
+
+      <div class="mb-4">
+        <label for="nombre" class="form-label">Nombre: </label>
+        <input type="text" id="nombre"
+        class="form-control" required formControlName="nombre" name="nombre">
+      </div>
+      <div *ngIf="alumnosForm.get('nombre')?.touched &&
+      alumnosForm.get('nombre')?.errors?.['required']"
+      class="alert alert-danger">Este Campo es requerido
+      </div>
+
+      <div class="mb-4">
+        <label for="edad" class="form-label">Edad: </label>
+        <input type="text" id="edad"
+        class="form-control" required formControlName="edad" name="edad">
+      </div>
+      <div class="mb-4">
+        <label for="correo" class="form-label">Correo: </label>
+        <input type="text" id="correo"
+        class="form-control" required formControlName="correo" name="correo">
+      </div>
+      <div *ngIf="alumnosForm.get('correo')?.touched &&
+      alumnosForm.get('correo')?.errors?.['required']"
+      class="alert alert-danger">Este Campo es requerido
+      </div>
+
+      <div class="mb-4">
+        <label for="calif" class="form-label">Calificacion: </label>
+        <input type="text" id="calif"
+        class="form-control" required formControlName="calif" name="calif">
+      </div>
+      <div class="mb-4">
+        <label for="foto" class="form-label">Foto: </label>
+        <input type="text" id="foto"
+        class="form-control" required formControlName="foto" name="foto">
+      </div>
+      <div class="d-grid gap-2 col-4 float-end">
+        <button class="btn btn-info btn-lg" type="submit">Guardar</button>
+      </div>
+    </form>
+  </div>
+  <div class="col-6">
+    <h1>Registros</h1>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Matricula</th>
+          <th>Nombre</th>
+          <th>Edad</th>
+          <th>Correo</th>
+          <th>Calificacion</th>
+          <th>Foto</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{mat}}</td>
+          <td>{{nom}}</td>
+          <td>{{ed}}</td>
+          <td>{{corr}}</td>
+          <td>{{cal}}</td>
+          <td>{{fot}}</td>
+        </tr>
+        <!-- <tr *ngFor="let alumno of listaAlumnos">
+
+          <td>{{alumno.matricula}}</td>
+          <td>{{alumno.nombre}}</td>
+          <td>{{alumno.edad}}</td>
+          <td>{{alumno.correo}}</td>
+          <td>{{alumno.calif}}</td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+</div>
